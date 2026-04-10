@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistem Penilaian Ormawa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-text">
+        <p class="badge">Sistem Evaluasi Organisasi Mahasiswa</p>
+        <h1>Sistem Penilaian Ormawa</h1>
+        <p class="subtitle">
+          Isi form penilaian secara lengkap, lalu klik submit.
+        </p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="main-content">
+        <form id="penilaianForm">
+          <section class="card">
+            <div class="section-header">
+              <h2>Data Umum</h2>
+              <p>Lengkapi identitas dasar organisasi yang sedang dinilai.</p>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="namaOrmawa">Nama Ormawa</label>
+                <input type="text" id="namaOrmawa" placeholder="Contoh: BEM Fakultas Teknik" required />
+              </div>
+
+              <div class="form-group">
+                <label for="diisiOleh">Diisi Oleh</label>
+                <input type="text" id="diisiOleh" placeholder="Nama penilai / pengurus" required />
+              </div>
+
+              <div class="form-group">
+                <label for="jumlahPengurus">Jumlah Pengurus dan Anggota</label>
+                <input type="text" id="jumlahPengurus" placeholder="Contoh: 35 orang" required />
+              </div>
+
+              <div class="form-group">
+                <label for="totalAnggaran">Total Anggaran Program Kerja</label>
+                <input type="text" id="totalAnggaran" placeholder="Contoh: Rp15.000.000" required />
+              </div>
+
+              <div class="form-group full">
+                <label for="jumlahKegiatanText">Jumlah Kegiatan Terlaksana dalam 1 Periode</label>
+                <textarea id="jumlahKegiatanText" rows="4" placeholder="Tuliskan jumlah kegiatan yang telah terlaksana"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="card" id="questionContainer"></section>
+
+          <section class="card">
+            <div class="section-header">
+              <h2>Catatan Tambahan</h2>
+              <p>Tambahkan keterangan atau evaluasi singkat bila diperlukan.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="catatan">Catatan</label>
+              <textarea id="catatan" rows="4" placeholder="Tambahkan catatan penilaian di sini..."></textarea>
+            </div>
+
+            <div class="action-bar">
+              <button type="submit" class="btn btn-primary">Submit Penilaian</button>
+            </div>
+          </section>
+        </form>
+      </section>
+
+      <aside class="sidebar">
+        <section class="card sticky-card result-box" id="resultBox">
+          <div class="section-header">
+            <h2>Hasil Penilaian</h2>
+            <p>Ringkasan otomatis akan tampil setelah form dikirim.</p>
+          </div>
+
+          <div class="result-list">
+            <div class="result-item">
+              <span>Total Nilai</span>
+              <strong id="totalNilai">0</strong>
+            </div>
+            <div class="result-item">
+              <span>Rata-rata</span>
+              <strong id="rataRata">0</strong>
+            </div>
+            <div class="result-item highlight">
+              <span>Kategori</span>
+              <strong id="kategori">-</strong>
+            </div>
+          </div>
+
+          <p id="statusKirim" class="status-text">Belum ada data yang dikirim.</p>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
